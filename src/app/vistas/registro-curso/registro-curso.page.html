@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Volver</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <body>
+  <h1>Formulario de registro</h1> <br>
+  <h3>Ingrese sus datos</h3>
+
+  <ion-list>
+
+    <ion-item>
+        <ion-input [(ngModel)]='newCourse.nombre' label="Nombre" label-placement="floating" placeholder="Ingrese nombre"></ion-input> 
+    </ion-item>
+
+    <ion-item>
+      <ion-input [(ngModel)]='newCourse.descripcion' label="descripcion" label-placement="floating" 
+          placeholder="Ingrese una descripcion para el curso" type="text"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+      <ion-button (click)="crearCurso()" fill="outline"> Registrar </ion-button>
+    </ion-item> <br>
+
+
+    <ion-item>
+      <ion-button [routerLink]="['/home']"> Volver </ion-button>
+    </ion-item>
+
+  </ion-list>
+</body>
+</ion-content>

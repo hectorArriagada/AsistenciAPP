@@ -1,0 +1,46 @@
+
+<ion-content [fullscreen]="true">
+
+  <body>
+    
+      <div>
+        <h2>Bienvenido</h2>
+      </div>
+      
+      <ion-img src="assets/img/logo.png" class="logo"></ion-img>
+      
+   
+      <div class="user">
+        <ion-input [(ngModel)]="user.username" label="Usuario" label-placement="floating" fill="outline"></ion-input>
+      </div>
+  
+      <div class="pass">
+        <ion-input [(ngModel)]="user.password" type="Password" label="Clave" label-placement="floating" fill="outline" >
+        </ion-input>
+      </div>
+
+      <div>
+        <ion-label>{{mensaje}}</ion-label>
+      </div>
+  
+      <div *ngIf="spinner">
+        <ion-item id="carga">
+          <ion-label>Cargando</ion-label>
+        </ion-item>
+
+      </div>
+
+      <ion-button (click)="validar()" >Ingresar</ion-button>
+
+      <ion-button fill="outline" (click)="cambiarClave()">Recuperar contraseña</ion-button>
+
+      <ion-button [routerLink]="['/registro']" > Registrar </ion-button>
+
+
+  
+      
+
+  </body>
+  
+  </ion-content>
+  
