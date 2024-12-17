@@ -1,13 +1,42 @@
-<ion-header [translucent]="true">
+// filepath: /c:/Users/hecto/Documents/GitHub/AppsMoviles/AsistenciAPP/src/app/vistas/dash-profe/dash-profe.page.html
+<ion-header>
   <ion-toolbar>
-    <ion-title>dash-alumno</ion-title>
+    <ion-title>Generador de QR</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">dash-alumno</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Generar Código QR</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-item>
+        <ion-label position="floating">Texto para el QR</ion-label>
+        <ion-input [(ngModel)]="qrData"></ion-input>
+      </ion-item>
+
+      <ion-button expand="full" (click)="generateQR()">Generar QR</ion-button>
+      <ion-button expand="full" (click)="scanQR()">Escanear QR</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Mostrar el QR si se ha generado -->
+  <div *ngIf="qrGenerated" class="qr-container">
+    <img [src]="qrCodeImage" alt="Código QR">
+  </div>
+
+  <!-- Mostrar la lista de asistencia -->
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Lista de Asistencia</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let attendance of attendanceList">
+          {{ attendance.date }} - {{ attendance.student }}
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
 </ion-content>

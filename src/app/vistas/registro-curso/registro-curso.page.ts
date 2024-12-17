@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FirestoreService } from 'src/app/servicios/firestore.service';
 import { CursoI } from 'src/app/servicios/modelos';
 
+
 @Component({
   selector: 'app-registro-curso',
   templateUrl: './registro-curso.page.html',

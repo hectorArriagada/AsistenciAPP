@@ -8,12 +8,19 @@ import { DashProfePageRoutingModule } from './dash-profe-routing.module';
 
 import { DashProfePage } from './dash-profe.page';
 
+import { QRCodeModule } from 'angularx-qrcode';
+
+
+
+
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    DashProfePageRoutingModule
+    DashProfePageRoutingModule,
+    QRCodeModule
   ],
   declarations: [DashProfePage]
 })
